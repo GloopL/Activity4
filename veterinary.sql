@@ -133,3 +133,7 @@ VALUES
 
 ALTER TABLE owners
 ADD COLUMN registered_date DATE;
+
+ALTER TABLE invoices
+RENAME COLUMN payment_date TO payment_time;
+
