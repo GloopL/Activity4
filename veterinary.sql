@@ -149,3 +149,5 @@ UPDATE doctors
 SET d_last_name = 'Reyes-Gonzales'
 WHERE d_first_name = 'Dr. Sofia';
 
+SELECT DISTINCT species
+FROM animals;
