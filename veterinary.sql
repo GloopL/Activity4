@@ -117,3 +117,17 @@ VALUES
     (8, 8, 150.00, '16:30:00'),
     (9, 9, 60.00, '14:45:00'),
     (10, 10, 40.00, '11:30:00');
+
+INSERT INTO medicalrecords (record_id, record_date, diagnosis, prescription, notes)
+VALUES 
+    (1, '2023-01-05 00:00:00', 'Health check', 'N/A', 'Regular checkup, no issue detected'),
+    (2, '2023-01-10 00:00:00', 'Vaccination', 'Vaccine X', 'Administered vaccination X as per schedule'),
+    (3, '2023-02-02 00:00:00', 'Sprained leg', 'Pain Medication', 'Rest recommended for two weeks'),
+    (4, '2023-02-15 00:00:00', 'Dental cleaning', 'N/A', 'Completed dental cleaning procedure'),
+    (5, '2023-03-10 00:00:00', 'Skin infection', 'Antibiotics', 'Prescribed antibiotics for skin infection'),
+    (6, '2023-03-10 00:00:00', 'Flea infestation', 'Flea Treatment', 'Administered flea treatment'),
+    (7, '2023-04-12 00:00:00', 'Vaccination', 'Vaccine Y', 'Administered vaccination Y as per schedule'),
+    (8, '2023-04-18 00:00:00', 'Spaying', 'N/A', 'Successfully performed spaying surgery'),
+    (9, '2023-05-02 00:00:00', 'Allergic reaction', 'Antihistamines', 'Allergic reaction due to food prescribed antihistamine'),
+    (10, '2023-05-20 00:00:00', 'Conjunctivitis', 'Eye drops', 'Prescribed eye drops for conjunctivitis');
+
