@@ -137,3 +137,10 @@ ADD COLUMN registered_date DATE;
 ALTER TABLE invoices
 RENAME COLUMN payment_date TO payment_time;
 
+DELETE FROM invoices
+WHERE appoint_id = (
+	SELECT appoint_id 
+	FROM appointments 
+	WHERE animal_id = (
+		SELECT animal_id 
+		FROM animals WHERE name = 'Simba'));
