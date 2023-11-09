@@ -70,31 +70,31 @@ VALUES
       (9, 'Pedro', 'Santillan', '888 Spruce St, Bacolod', '888-777-6666', 'pedro@example.com'),
       (10, 'Sofia', 'Villanueva', '777 Walnut St, Iloilo', '111-999-3333', 'sofia@example.com');
 
-INSERT INTO animals (animal_id, name, species, breed, date_of_birth, gender, color)
+INSERT INTO animals (animal_id, name, species, breed, date_of_birth, gender, color, owner_id)
 VALUES
-	(1, 'Fido', 'Dog', 'Golden Retriever', '2018-03-15', 'Male', 'Golden'),
-	(2, 'Whiskers', 'Cat', 'Siamese', '2019-07-20', 'Female', 'Cream'),
-	(3, 'Rocky', 'Dog', 'German Shepherd', '2017-05-10', 'Male', 'Black and Tan'),
-	(4, 'Fluffy', 'Cat', 'Persian', '2020-01-30', 'Male', 'White'),
-	(5, 'Luna', 'Dog', 'Larbrador Retriever', '2019-11-25', 'Female', 'Yellow'),
-	(6, 'Mochi', 'Cat', 'Maine Coon', '2018-09-12', 'Male', 'Brown Tabby'),
-	(7, 'Bella', 'Dog', 'Poodle', '2020-04-05', 'Female', 'White'),
-	(8, 'Simba', 'Cat', 'Bengal', '2018-06-18', 'Male', 'Spotted Rosetted'),
-	(9, 'Max', 'Dog', 'Dachshund', '2020-07-14', 'Male', 'Black and Tan'),
-	(10,'Cleo', 'Cat', 'Ragdoll', '2019-12-22', 'Female', 'Seal Point');
+	(1, 'Fido', 'Dog', 'Golden Retriever', '2018-03-15', 'Male', 'Golden', 1),
+	(2, 'Whiskers', 'Cat', 'Siamese', '2019-07-20', 'Female', 'Cream', 2),
+	(3, 'Rocky', 'Dog', 'German Shepherd', '2017-05-10', 'Male', 'Black and Tan', 3),
+	(4, 'Fluffy', 'Cat', 'Persian', '2020-01-30', 'Male', 'White', 4),
+	(5, 'Luna', 'Dog', 'Larbrador Retriever', '2019-11-25', 'Female', 'Yellow', 5),
+	(6, 'Mochi', 'Cat', 'Maine Coon', '2018-09-12', 'Male', 'Brown Tabby', 6),
+	(7, 'Bella', 'Dog', 'Poodle', '2020-04-05', 'Female', 'White', 7),
+	(8, 'Simba', 'Cat', 'Bengal', '2018-06-18', 'Male', 'Spotted Rosetted', 8),
+	(9, 'Max', 'Dog', 'Dachshund', '2020-07-14', 'Male', 'Black and Tan', 9),
+	(10,'Cleo', 'Cat', 'Ragdoll', '2019-12-22', 'Female', 'Seal Point', 10);
 
-INSERT INTO appointments (appoint_id, appoint_date, reason)
+INSERT INTO appointments (appoint_id, animal_id, appoint_date, reason)
 VALUES
-    (1, '2023-01-05', 'Annual check-up'),
-    (2, '2023-01-10', 'Vaccination'),
-    (3, '2023-02-02', 'Injury assessment'),
-    (4, '2023-02-15', 'Dental cleaning'),
-    (5, '2023-03-05', 'Skin condition'),
-    (6, '2023-03-10', 'Check for fleas'),
-    (7, '2023-04-12', 'Vaccination'),
-    (8, '2023-04-18', 'Spaying/neutering'),
-    (9, '2023-05-02', 'Allergy treatment'),
-    (10, '2023-05-20', 'Eye infection');
+    (1, 1, '2023-01-05', 'Annual check-up'),
+    (2, 2, '2023-01-10', 'Vaccination'),
+    (3, 3, '2023-02-02', 'Injury assessment'),
+    (4, 4, '2023-02-15', 'Dental cleaning'),
+    (5, 5, '2023-03-05', 'Skin condition'),
+    (6, 6, '2023-03-10', 'Check for fleas'),
+    (7, 7, '2023-04-12', 'Vaccination'),
+    (8, 8, '2023-04-18', 'Spaying/neutering'),
+    (9, 9, '2023-05-02', 'Allergy treatment'),
+    (10, 10,'2023-05-20', 'Eye infection');
 
 INSERT INTO doctors (doctor_id, d_first_name, d_last_name, specialty, phone, email)
 VALUES
@@ -105,7 +105,7 @@ VALUES
 	(5, 'Dr. Luis', 'Torres', 'Surgery Specialist', '123-555-7777', 'luis@example.com'),
 	(6, 'Dr. Carmen', 'Fernandez', 'Ophthalmology Specialist', '333-222-1111', 'carmen@example.com');
 
-INSERT INTO invoices(invoiceid, appointid, totalamount, paymentdate)
+INSERT INTO invoices(invoice_id, appoint_id, total_amount, payment_date)
 VALUES
     (1, 1, 50.00, '09:30:00'),
     (2, 2, 75.00, '14:15:00'),
@@ -118,18 +118,18 @@ VALUES
     (9, 9, 60.00, '14:45:00'),
     (10, 10, 40.00, '11:30:00');
 
-INSERT INTO medicalrecords (record_id, record_date, diagnosis, prescription, notes)
+INSERT INTO medicalrecords (record_id, animal_id, record_date, doctor_id, diagnosis, prescription, notes)
 VALUES 
-    (1, '2023-01-05 00:00:00', 'Health check', 'N/A', 'Regular checkup, no issue detected'),
-    (2, '2023-01-10 00:00:00', 'Vaccination', 'Vaccine X', 'Administered vaccination X as per schedule'),
-    (3, '2023-02-02 00:00:00', 'Sprained leg', 'Pain Medication', 'Rest recommended for two weeks'),
-    (4, '2023-02-15 00:00:00', 'Dental cleaning', 'N/A', 'Completed dental cleaning procedure'),
-    (5, '2023-03-10 00:00:00', 'Skin infection', 'Antibiotics', 'Prescribed antibiotics for skin infection'),
-    (6, '2023-03-10 00:00:00', 'Flea infestation', 'Flea Treatment', 'Administered flea treatment'),
-    (7, '2023-04-12 00:00:00', 'Vaccination', 'Vaccine Y', 'Administered vaccination Y as per schedule'),
-    (8, '2023-04-18 00:00:00', 'Spaying', 'N/A', 'Successfully performed spaying surgery'),
-    (9, '2023-05-02 00:00:00', 'Allergic reaction', 'Antihistamines', 'Allergic reaction due to food prescribed antihistamine'),
-    (10, '2023-05-20 00:00:00', 'Conjunctivitis', 'Eye drops', 'Prescribed eye drops for conjunctivitis');
+    (1, 1, '2023-01-05 00:00:00', 1, 'Health check', 'N/A', 'Regular checkup, no issue detected'),
+    (2, 2, '2023-01-10 00:00:00', 1, 'Vaccination', 'Vaccine X', 'Administered vaccination X as per schedule'),
+    (3, 3, '2023-02-02 00:00:00', 3, 'Sprained leg', 'Pain Medication', 'Rest recommended for two weeks'),
+    (4, 4, '2023-02-15 00:00:00', 1, 'Dental cleaning', 'N/A', 'Completed dental cleaning procedure'),
+    (5, 5, '2023-03-10 00:00:00', 4, 'Skin infection', 'Antibiotics', 'Prescribed antibiotics for skin infection'),
+    (6, 6,'2023-03-10 00:00:00', 2, 'Flea infestation', 'Flea Treatment', 'Administered flea treatment'),
+    (7, 7, '2023-04-12 00:00:00', 1, 'Vaccination', 'Vaccine Y', 'Administered vaccination Y as per schedule'),
+    (8, 8, '2023-04-18 00:00:00', 5, 'Spaying', 'N/A', 'Successfully performed spaying surgery'),
+    (9, 9, '2023-05-02 00:00:00', 4, 'Allergic reaction', 'Antihistamines', 'Allergic reaction due to food prescribed antihistamine'),
+    (10, 10, '2023-05-20 00:00:00', 6, 'Conjunctivitis', 'Eye drops', 'Prescribed eye drops for conjunctivitis');
 
 ALTER TABLE owners
 ADD COLUMN registered_date DATE;
