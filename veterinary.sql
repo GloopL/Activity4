@@ -144,3 +144,8 @@ WHERE appoint_id = (
 	WHERE animal_id = (
 		SELECT animal_id 
 		FROM animals WHERE name = 'Simba'));
+
+UPDATE doctors
+SET d_last_name = 'Reyes-Gonzales'
+WHERE d_first_name = 'Dr. Sofia';
+
