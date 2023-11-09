@@ -27,4 +27,13 @@ CREATE TABLE appointments(
     appoint_date DATE NOT NULL,
     reason VARCHAR(255),
     FOREIGN KEY (animal_id) REFERENCES animals(animal_id)
-)
+);
+
+CREATE TABLE doctors(
+    doctor_id INT PRIMARY KEY,
+    d_first_name VARCHAR(50) NOT NULL,
+    d_last_name VARCHAR(50) NOT NULL,
+    specialty VARCHAR(100) NOT NULL,
+    phone VARCHAR(15) NOT NULL,
+    email VARCHAR(100) NOT NULL
+);
